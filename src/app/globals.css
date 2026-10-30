@@ -2,7 +2,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #246b8d;
 }
 
 @theme inline {
@@ -12,15 +12,106 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.eyebrow {
+  display: inline-flex;
+  border-radius: 999px;
+  background: #eef8fa;
+  padding: 5px 10px;
+  color: #5793ab;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.eyebrow-green {
+  background: #edf9f1;
+  color: #65ad70;
+}
+
+.button-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  background: #65ad70;
+  padding: 9px 18px;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  transition: background-color 150ms ease;
+}
+
+.button-primary:hover {
+  background: #4d995a;
+}
+
+.section-title {
+  max-width: 600px;
+  color: #246b8d;
+  font-size: clamp(1.65rem, 3vw, 2rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.activity-card,
+.help-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #e8edef;
+  border-radius: 9px;
+  background: white;
+  padding: 18px 16px;
+  color: #246b8d;
+  box-shadow: 0 1px 2px rgb(36 107 141 / 3%);
+}
+
+.activity-card {
+  min-height: 90px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.activity-card h3,
+.help-card h3 {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.help-card {
+  min-height: 62px;
+  transition: border-color 150ms ease, transform 150ms ease;
+}
+
+.help-card:hover {
+  border-color: #b7d9e3;
+  transform: translateY(-2px);
+}
+
+.icon-circle {
+  display: inline-flex;
+  height: 31px;
+  width: 31px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: #eff8fc;
+  color: #5d9bb5;
+}
+
+.icon-circle-green {
+  background: #f0faf3;
+  color: #65ad70;
 }
