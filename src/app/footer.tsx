@@ -4,7 +4,7 @@ const siteLinks = [
 	{ label: "Início", href: "/#inicio" },
 	{ label: "Sobre Nós", href: "/sobre-nos" },
 	{ label: "Atividades", href: "/#atividades" },
-	{ label: "Quero ajudar", href: "/#quero-ajudar" },
+	{ label: "Quero ajudar", href: "/quero-ajudar" },
 ];
 
 function ParqueCocoMark() {

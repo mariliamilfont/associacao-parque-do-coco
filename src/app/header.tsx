@@ -100,7 +100,7 @@ export default function Header() {
 					</details>
 
 					<Link
-						href="/#quero-ajudar"
+						href="/quero-ajudar"
 						className="flex h-[34px] items-center gap-2 rounded-[8px] bg-[#65ad70] px-3 text-[10px] font-bold text-white transition-colors hover:bg-[#4d995a] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#246b8d] sm:px-4 sm:text-xs"
 					>
 						<FlowerMark />
