@@ -1,8 +1,10 @@
+import Link from "next/link";
+
 const siteLinks = [
-	{ label: "Início", href: "#inicio" },
-	{ label: "Sobre Nós", href: "#sobre-nos" },
-	{ label: "Atividades", href: "#atividades" },
-	{ label: "Quero ajudar", href: "#quero-ajudar" },
+	{ label: "Início", href: "/#inicio" },
+	{ label: "Sobre Nós", href: "/sobre-nos" },
+	{ label: "Atividades", href: "/#atividades" },
+	{ label: "Quero ajudar", href: "/#quero-ajudar" },
 ];
 
 function ParqueCocoMark() {
@@ -34,13 +36,13 @@ export default function Footer() {
 		<footer className="mt-auto border-t border-[#d6e0e5] bg-[#f0f7fa] text-[#246b8d]">
 			<div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-6 pb-7 pt-9 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.65fr_1.35fr_0.9fr] lg:gap-10 lg:px-8">
 				<section aria-label="Sobre a associação">
-					<a href="#inicio" aria-label="Associação Parque do Cocó, início" className="inline-flex items-center gap-2">
+					<Link href="/#inicio" aria-label="Associação Parque do Cocó, início" className="inline-flex items-center gap-2">
 						<ParqueCocoMark />
 						<span className="flex flex-col leading-[1.05]">
 							<span className="text-[10px] font-semibold text-[#69a5c3]">Associação</span>
 							<span className="text-xs font-bold">Parque do Cocó</span>
 						</span>
-					</a>
+					</Link>
 					<p className="mt-4 max-w-[250px] text-[11px] leading-[1.55] text-[#5d6971]">
 						Ações educativas e sociais para crianças e adolescentes em Fortaleza, fortalecendo o aprendizado e a convivência.
 					</p>
@@ -51,9 +53,9 @@ export default function Footer() {
 					<ul className="space-y-2.5">
 						{siteLinks.map(({ label, href }) => (
 							<li key={label}>
-								<a className="text-[11px] transition-colors hover:text-[#1597df] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1597df]" href={href}>
+								<Link className="text-[11px] transition-colors hover:text-[#1597df] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1597df]" href={href}>
 									{label}
-								</a>
+								</Link>
 							</li>
 						))}
 					</ul>

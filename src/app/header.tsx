@@ -1,7 +1,9 @@
+import Link from "next/link";
+
 const navigationLinks = [
-	{ label: "Início", href: "#inicio" },
-	{ label: "Sobre Nós", href: "#sobre-nos" },
-	{ label: "Atividades", href: "#atividades" },
+	{ label: "Início", href: "/#inicio" },
+	{ label: "Sobre Nós", href: "/sobre-nos" },
+	{ label: "Atividades", href: "/#atividades" },
 ];
 
 function ParqueCocoMark() {
@@ -47,13 +49,13 @@ function NavigationItems({ mobile = false }: { mobile?: boolean }) {
 	return (
 		<>
 			{navigationLinks.map(({ label, href }) => (
-				<a
+				<Link
 					key={label}
 					href={href}
 					className={`font-semibold text-[#246b8d] transition-colors hover:text-[#1597df] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1597df] ${mobile ? "block px-4 py-3" : "text-sm"}`}
 				>
 					{label}
-				</a>
+				</Link>
 			))}
 		</>
 	);
@@ -63,8 +65,8 @@ export default function Header() {
 	return (
 		<header className="relative z-50 border-b border-[#d5d5d5] bg-white">
 			<div className="mx-auto flex h-[74px] items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
-				<a
-					href="#inicio"
+				<Link
+					href="/#inicio"
 					aria-label="Associação Parque do Cocó, início"
 					className="flex shrink-0 items-center gap-2"
 				>
@@ -73,7 +75,7 @@ export default function Header() {
 						<span className="text-[11px] font-semibold text-[#69a5c3]">Associação</span>
 						<span className="text-[13px] font-bold text-[#246b8d]">Parque do Cocó</span>
 					</span>
-				</a>
+				</Link>
 
 				<nav aria-label="Navegação principal" className="hidden flex-1 items-center justify-evenly md:flex">
 					<NavigationItems />
@@ -97,13 +99,13 @@ export default function Header() {
 						</nav>
 					</details>
 
-					<a
-						href="#quero-ajudar"
+					<Link
+						href="/#quero-ajudar"
 						className="flex h-[34px] items-center gap-2 rounded-[8px] bg-[#65ad70] px-3 text-[10px] font-bold text-white transition-colors hover:bg-[#4d995a] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#246b8d] sm:px-4 sm:text-xs"
 					>
 						<FlowerMark />
 						<span className="whitespace-nowrap">QUERO AJUDAR</span>
-					</a>
+					</Link>
 				</div>
 			</div>
 		</header>

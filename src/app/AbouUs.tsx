@@ -169,7 +169,7 @@ export default function AboutUs() {
 		>
 			<div className="mx-auto max-w-6xl">
 				<section
-					id="inicio"
+					id="apresentacao-sobre-nos"
 					aria-labelledby="about-heading"
 					className="grid items-center gap-8 md:grid-cols-2 md:gap-12"
 				>
@@ -200,7 +200,7 @@ export default function AboutUs() {
 					/>
 				</section>
 
-				<section aria-labelledby="history-heading" className="mt-16 sm:mt-20">
+				<section id="historia" aria-labelledby="history-heading" className="mt-16 scroll-mt-8 sm:mt-20">
 					<p className="mb-3 text-xs font-semibold text-[#65ad70]">Nossa história</p>
 					<h2 id="history-heading" className="max-w-4xl text-2xl font-extrabold leading-tight text-[#286d8b] sm:text-3xl">
 						Desde 1993, a Associação Beneficente Parque do Cocó desenvolve um trabalho social e educativo voltado para crianças e adolescentes de comunidades.
@@ -266,7 +266,7 @@ export default function AboutUs() {
 					</div>
 				</section>
 
-				<section id="atividades" aria-labelledby="activities-heading" className="mt-14 scroll-mt-8 sm:mt-16">
+				<section id="atuacao" aria-labelledby="activities-heading" className="mt-14 scroll-mt-8 sm:mt-16">
 					<p className="mb-3 text-xs font-semibold text-[#65ad70]">Nossa atuação</p>
 					<h2 id="activities-heading" className="max-w-5xl text-2xl font-extrabold leading-tight text-[#286d8b] sm:text-3xl">
 						Nosso trabalho vai além do apoio escolar. Buscamos contribuir para a educação, a cultura, a convivência e o desenvolvimento social de crianças e adolescentes.
@@ -333,7 +333,7 @@ export default function AboutUs() {
 				</section>
 
 				<section
-					id="quero-ajudar"
+					id="formas-de-contribuir"
 					aria-labelledby="contribute-heading"
 					className="mt-12 grid scroll-mt-8 items-center gap-8 rounded-3xl bg-[#eaf4f7] p-6 sm:mt-14 sm:p-9 lg:grid-cols-2 lg:gap-12 lg:p-10"
 				>

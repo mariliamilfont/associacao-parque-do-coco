@@ -1,5 +1,9 @@
-import AboutUs from "./AbouUs";
+import HomePage from "./Home";
 
 export default function Home() {
-	return <AboutUs />;
+	return (
+		<>
+			<HomePage />
+		</>
+	);
 }
