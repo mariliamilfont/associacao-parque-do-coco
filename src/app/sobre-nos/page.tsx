@@ -1,4 +1,4 @@
-import AboutUs from "../AbouUs";
+import AboutUs from "../AboutUs";
 
 export default function AboutUsPage() {
 	return <AboutUs />;
