@@ -63,7 +63,7 @@ function NavigationItems({ mobile = false }: { mobile?: boolean }) {
 
 export default function Header() {
 	return (
-		<header className="relative z-50 border-b border-[#d5d5d5] bg-white">
+		<header className="sticky top-0 z-50 border-b border-[#d5d5d5] bg-white shadow-[0_1px_8px_rgba(36,107,141,0.06)]">
 			<div className="mx-auto flex h-[74px] items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
 				<Link
 					href="/#inicio"
