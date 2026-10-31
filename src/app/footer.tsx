@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { contato, emailLink, mapa } from "./contato";
+import InstagramIcon from "./InstagramIcon";
 
 const siteLinks = [
 	{ label: "Início", href: "/#inicio" },
@@ -23,37 +25,32 @@ function ParqueCocoMark() {
 	);
 }
 
-function ContactPlaceholder({ children }: { children: string }) {
-	return (
-		<div className="rounded-[4px] bg-white px-2 py-[7px] text-[10px] text-[#78848c]">
-			{children}
-		</div>
-	);
-}
+const linkClass =
+	"text-[#5d6971] transition-colors hover:text-[#1597df] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1597df]";
 
 export default function Footer() {
 	return (
 		<footer className="mt-auto border-t border-[#d6e0e5] bg-[#f0f7fa] text-[#246b8d]">
-			<div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-6 pb-7 pt-9 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.65fr_1.35fr_0.9fr] lg:gap-10 lg:px-8">
+			<div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-6 pb-7 pt-9 sm:grid-cols-2 lg:grid-cols-[1.1fr_0.6fr_1.2fr_1.1fr] lg:gap-10 lg:px-8">
 				<section aria-label="Sobre a associação">
 					<Link href="/#inicio" aria-label="Associação Parque do Cocó, início" className="inline-flex items-center gap-2">
 						<ParqueCocoMark />
 						<span className="flex flex-col leading-[1.05]">
-							<span className="text-[10px] font-semibold text-[#69a5c3]">Associação</span>
+							<span className="text-[0.75rem] font-semibold text-[#69a5c3]">Associação</span>
 							<span className="text-xs font-bold">Parque do Cocó</span>
 						</span>
 					</Link>
-					<p className="mt-4 max-w-[250px] text-[11px] leading-[1.55] text-[#5d6971]">
+					<p className="mt-4 max-w-[15.625rem] text-[0.8125rem] leading-[1.55] text-[#5d6971]">
 						Ações educativas e sociais para crianças e adolescentes em Fortaleza, fortalecendo o aprendizado e a convivência.
 					</p>
 				</section>
 
 				<nav aria-label="Navegue pelo site">
-					<h2 className="mb-3 text-[11px] font-bold">Navegue pelo site</h2>
+					<h2 className="mb-3 text-[0.8125rem] font-bold">Navegue pelo site</h2>
 					<ul className="space-y-2.5">
 						{siteLinks.map(({ label, href }) => (
 							<li key={label}>
-								<Link className="text-[11px] transition-colors hover:text-[#1597df] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1597df]" href={href}>
+								<Link className="text-[0.8125rem] transition-colors hover:text-[#1597df] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1597df]" href={href}>
 									{label}
 								</Link>
 							</li>
@@ -62,31 +59,49 @@ export default function Footer() {
 				</nav>
 
 				<section aria-labelledby="footer-contact-heading">
-					<h2 id="footer-contact-heading" className="mb-3 text-[11px] font-bold">Onde estamos e contato</h2>
-					<dl className="space-y-2.5 text-[10px]">
+					<h2 id="footer-contact-heading" className="mb-3 text-[0.8125rem] font-bold">Onde estamos e contato</h2>
+					<dl className="space-y-2.5 text-[0.75rem]">
 						<div>
 							<dt className="mb-1 font-semibold">Endereço</dt>
 							<dd className="leading-4 text-[#5d6971]">R. Des. Leite Albuquerque, 1523 - Aldeota</dd>
 						</div>
 						<div>
 							<dt className="mb-1 font-semibold">Telefone</dt>
-							<dd><ContactPlaceholder>[INSERIR TELEFONE]</ContactPlaceholder></dd>
+							<dd><a className={linkClass} href={contato.telefoneLink}>{contato.telefone}</a></dd>
 						</div>
 						<div>
 							<dt className="mb-1 font-semibold">E-mail</dt>
-							<dd><ContactPlaceholder>[INSERIR E-MAIL]</ContactPlaceholder></dd>
+							<dd><a className={`${linkClass} break-all`} href={emailLink}>{contato.email}</a></dd>
 						</div>
 					</dl>
 				</section>
 
 				<section aria-labelledby="footer-social-heading">
-					<h2 id="footer-social-heading" className="mb-3 text-[11px] font-bold">Redes sociais</h2>
-					<ContactPlaceholder>[INSERIR REDES SOCIAIS]</ContactPlaceholder>
+					<h2 id="footer-social-heading" className="mb-3 text-[0.8125rem] font-bold">Redes sociais</h2>
+					<a
+							className={`${linkClass} inline-flex items-center gap-2 text-[0.8125rem]`}
+							href={contato.instagramUrl}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<InstagramIcon aria-hidden="true" size={16} />
+							{contato.instagram}
+						</a>
+						<iframe
+							title="Mapa com o endereço da Associação Parque do Cocó"
+							src={mapa.embed}
+							loading="lazy"
+							referrerPolicy="no-referrer-when-downgrade"
+							className="mt-4 h-32 w-full rounded-lg border border-[#d6e0e5]"
+						/>
+						<a className={`${linkClass} mt-2 inline-block text-[0.75rem] underline`} href={mapa.link} target="_blank" rel="noopener noreferrer">
+							Abrir no Google Maps
+						</a>
 				</section>
 			</div>
 
 			<div className="mx-auto max-w-5xl px-6 lg:px-8">
-				<div className="border-t border-[#dce6ea] py-4 text-[10px] text-[#65727a]">
+				<div className="border-t border-[#dce6ea] py-4 text-[0.75rem] text-[#65727a]">
 					Associação Beneficente Parque do Cocó
 				</div>
 			</div>

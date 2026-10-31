@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { efeitos, fx } from "./efeitos";
 
 const navigationLinks = [
 	{ label: "Início", href: "/#inicio" },
@@ -29,7 +30,7 @@ function ParqueCocoMark() {
 
 function FlowerMark() {
 	return (
-		<svg aria-hidden="true" className="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none">
+		<svg aria-hidden="true" className={`h-5 w-5 shrink-0 ${fx(efeitos.pulsoBotao, "fx-spin")}`} viewBox="0 0 24 24" fill="none">
 			<g fill="currentColor">
 				<ellipse cx="12" cy="5.1" rx="2.1" ry="4" />
 				<ellipse cx="12" cy="18.9" rx="2.1" ry="4" />
@@ -64,7 +65,7 @@ function NavigationItems({ mobile = false }: { mobile?: boolean }) {
 export default function Header() {
 	return (
 		<header className="sticky top-0 z-50 border-b border-[#d5d5d5] bg-white shadow-[0_1px_8px_rgba(36,107,141,0.06)]">
-			<div className="mx-auto flex h-[74px] items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
+			<div className="mx-auto flex h-[4.625rem] items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
 				<Link
 					href="/#inicio"
 					aria-label="Associação Parque do Cocó, início"
@@ -72,8 +73,8 @@ export default function Header() {
 				>
 					<ParqueCocoMark />
 					<span className="flex flex-col leading-[1.05]">
-						<span className="text-[11px] font-semibold text-[#69a5c3]">Associação</span>
-						<span className="text-[13px] font-bold text-[#246b8d]">Parque do Cocó</span>
+						<span className="text-[0.6875rem] font-semibold text-[#69a5c3]">Associação</span>
+						<span className="text-[0.8125rem] font-bold text-[#246b8d]">Parque do Cocó</span>
 					</span>
 				</Link>
 
@@ -101,7 +102,7 @@ export default function Header() {
 
 					<Link
 						href="/quero-ajudar"
-						className="flex h-[34px] items-center gap-2 rounded-[8px] bg-[#65ad70] px-3 text-[10px] font-bold text-white transition-colors hover:bg-[#4d995a] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#246b8d] sm:px-4 sm:text-xs"
+						className={`flex h-[2.125rem] items-center gap-2 rounded-lg bg-[#65ad70] px-3 text-[0.625rem] font-bold text-white transition-colors hover:bg-[#4d995a] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#246b8d] sm:px-4 sm:text-xs ${fx(efeitos.pulsoBotao, "fx-pulse-loud")}`}
 					>
 						<FlowerMark />
 						<span className="whitespace-nowrap">QUERO AJUDAR</span>

@@ -1,5 +1,14 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import type { CSSProperties } from "react";
+import { efeitos, fx } from "./efeitos";
+import Blobs from "./fx/Blobs";
+import Counter from "./fx/Counter";
+import HeroGallery from "./fx/HeroGallery";
+import ParallaxImage from "./fx/ParallaxImage";
+import Tree from "./fx/Tree";
+import Wave from "./fx/Wave";
+import Words from "./fx/Words";
 
 const activities = [
   { icon: "book", title: "Educação" },
@@ -90,37 +99,39 @@ function SectionIcon({ name }: { name: string }) {
 
 export default function Home() {
   return (
-    <main>
-      <section id="inicio" className="border-b border-[#edf0f1] bg-white">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-10 sm:px-6 sm:py-12 lg:grid-cols-[0.93fr_1.07fr] lg:gap-12 lg:px-6 lg:py-10">
+    <main className="relative">
+      <Tree />
+      <section id="inicio" className="relative overflow-hidden border-b border-[#edf0f1] bg-white">
+        <Blobs />
+        <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-10 sm:px-6 sm:py-12 lg:grid-cols-[0.93fr_1.07fr] lg:gap-12 lg:px-6 lg:py-10">
           <div className="order-2 lg:order-1">
-            <span className="eyebrow">ASSOCIAÇÃO BENEFICENTE</span>
-            <h1 className="mt-5 max-w-[500px] text-4xl font-extrabold leading-[1.08] tracking-[-0.03em] text-[#246b8d] sm:text-[44px]">
-              Transformando oportunidades por meio da educação e da convivência
+            <span className={`eyebrow ${fx(efeitos.heroEntrada, "fx-rise")}`}>ASSOCIAÇÃO BENEFICENTE</span>
+            <h1 className="mt-5 max-w-[31.25rem] text-4xl font-extrabold leading-[1.08] tracking-[-0.03em] text-[#246b8d] sm:text-[2.75rem]">
+              <Words text="Transformando oportunidades por meio da educação e da convivência" />
             </h1>
-            <p className="mt-5 max-w-[480px] text-sm leading-6 text-[#68757d] sm:text-[15px]">
+            <p
+              className={`mt-5 max-w-[30rem] text-base leading-6 text-[#68757d] sm:text-[1.0625rem] ${fx(efeitos.heroEntrada, "fx-rise")}`}
+              style={{ "--d": "1.1s" } as CSSProperties}
+            >
               Há mais de 30 anos, a Associação Beneficente Parque do Cocó desenvolve ações educativas e sociais para crianças e adolescentes em Fortaleza.
             </p>
-            <a href="#quero-ajudar" className="button-primary mt-6">
+            <a
+              href="/quero-ajudar"
+              className={`button-primary mt-6 ${fx(efeitos.heroEntrada, "fx-rise")} ${fx(efeitos.pulsoBotao, "fx-pulse")}`}
+              style={{ "--d": "1.3s" } as CSSProperties}
+            >
               Quero ajudar
             </a>
           </div>
-          <div className="order-1 overflow-hidden rounded-[14px] lg:order-2">
-            <Image
-              src="/hero-educacao.jpg"
-              alt="Crianças aprendendo e brincando juntas em uma sala de aula"
-              width={768}
-              height={768}
-              className="aspect-square w-full object-cover"
-              priority
-            />
+          <div className="order-1 overflow-hidden rounded-[0.875rem] lg:order-2">
+            <HeroGallery />
           </div>
         </div>
       </section>
 
       <section id="conheca-associacao" className="bg-white">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12 lg:px-6 lg:py-16">
-          <div className="overflow-hidden rounded-[12px]">
+          <ParallaxImage className="overflow-hidden rounded-xl">
             <Image
               src="/mural-arte.jpg"
               alt="Jovens pintando um mural colorido"
@@ -128,30 +139,53 @@ export default function Home() {
               height={768}
               className="aspect-[1.5] w-full object-cover"
             />
-          </div>
+          </ParallaxImage>
           <div>
             <span className="eyebrow eyebrow-green">DESDE 1993</span>
             <h2 className="section-title mt-5">Um espaço para aprender, criar e crescer</h2>
-            <p className="mt-5 text-sm leading-6 text-[#68757d]">
+            <p className="mt-5 text-base leading-6 text-[#68757d]">
               Na Associação Beneficente Parque do Cocó, crianças e adolescentes encontram oportunidades de aprendizado, convivência e desenvolvimento por meio de diferentes atividades educativas, esportivas e culturais, fortalecendo os vínculos comunitários e familiares.
             </p>
             <a href="/sobre-nos#historia" className="inline-flex items-center gap-2 pt-5 text-sm font-bold text-[#246b8d] transition-colors hover:text-[#1597df]">
               Conheça nossa história <ArrowRight aria-hidden="true" size={16} strokeWidth={2} />
             </a>
+            {efeitos.contadores && (
+              <dl className="mt-8 grid grid-cols-3 gap-4 border-t border-[#e3edf0] pt-6">
+                <div className="flex flex-col-reverse">
+                  <dt className="text-sm text-[#68757d]">de atuação</dt>
+                  <dd className="text-3xl font-extrabold tracking-tight text-[#246b8d]">
+                    +<Counter to={30} /> anos
+                  </dd>
+                </div>
+                <div className="flex flex-col-reverse">
+                  <dt className="text-sm text-[#68757d]">ano de fundação</dt>
+                  <dd className="text-3xl font-extrabold tracking-tight text-[#246b8d]">
+                    <Counter from={1900} to={1993} />
+                  </dd>
+                </div>
+                <div className="flex flex-col-reverse">
+                  <dt className="text-sm text-[#68757d]">faixa etária atendida</dt>
+                  <dd className="text-3xl font-extrabold tracking-tight text-[#246b8d]">
+                    <Counter to={4} /> a <Counter to={16} />
+                  </dd>
+                </div>
+              </dl>
+            )}
           </div>
         </div>
       </section>
 
       <section id="atividades" className="bg-[#eff8fc]">
+        <Wave from="#ffffff" to="#eff8fc" />
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-6 lg:py-16">
           <h2 className="section-title">Educação que vai além da sala de aula</h2>
-          <p className="mt-3 text-sm text-[#68757d]">
+          <p className="mt-3 text-base text-[#68757d]">
             Nosso trabalho reúne educação, cultura, arte e convivência para contribuir com o desenvolvimento de crianças e adolescentes.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {activities.map((activity) => (
-              <article key={activity.title} className="activity-card">
-                <span className="icon-circle"><SectionIcon name={activity.icon} /></span>
+              <article key={activity.title} className={`activity-card ${fx(efeitos.hoverCards, "fx-card")}`}>
+                <span className="icon-circle fx-icon"><SectionIcon name={activity.icon} /></span>
                 <h3>{activity.title}</h3>
               </article>
             ))}
@@ -163,15 +197,16 @@ export default function Home() {
       </section>
 
       <section id="quero-ajudar" className="bg-white">
+        <Wave from="#eff8fc" to="#ffffff" variant={1} />
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-6 lg:py-16">
           <h2 className="section-title">Você também pode fazer parte dessa história</h2>
-          <p className="mt-3 max-w-4xl text-sm leading-6 text-[#68757d]">
+          <p className="mt-3 max-w-4xl text-base leading-6 text-[#68757d]">
             A continuidade das atividades da Associação conta com o apoio de voluntários, doadores e parceiros. Cada gesto ajuda a construir novos futuros.
           </p>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {waysToHelp.map((way) => (
-              <a key={way.title} href="#contato" className="help-card">
-                <span className="icon-circle icon-circle-green"><SectionIcon name={way.icon} /></span>
+              <a key={way.title} href="#contato" className={`help-card ${fx(efeitos.hoverCards, "fx-card")}`}>
+                <span className="icon-circle icon-circle-green fx-icon"><SectionIcon name={way.icon} /></span>
                 <h3>{way.title}</h3>
               </a>
             ))}
@@ -180,12 +215,16 @@ export default function Home() {
       </section>
 
       <section id="contato" className="bg-[#f3faf7]">
-        <div className="mx-auto max-w-3xl px-6 py-14 text-center sm:px-8 lg:py-16">
-          <h2 className="section-title">Juntos, podemos transformar oportunidades</h2>
-          <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-[#68757d]">
+        <Wave from="#ffffff" to="#f3faf7" />
+        <div className="relative overflow-hidden">
+        <Blobs />
+        <div className="relative mx-auto max-w-3xl px-6 py-14 text-center sm:px-8 lg:py-16">
+          <h2 className="section-title mx-auto">Juntos, podemos transformar oportunidades</h2>
+          <p className="mx-auto mt-4 max-w-xl text-base leading-6 text-[#68757d]">
             Conheça de perto o trabalho da Associação Beneficente Parque do Cocó e descubra como você pode contribuir para o desenvolvimento de crianças e adolescentes.
           </p>
-          <a href="#quero-ajudar" className="button-primary mt-6">Quero ajudar</a>
+          <a href="/quero-ajudar" className="button-primary mt-6">Quero ajudar</a>
+        </div>
         </div>
       </section>
     </main>
