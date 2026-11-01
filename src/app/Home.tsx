@@ -190,7 +190,7 @@ export default function Home() {
               </article>
             ))}
           </div>
-          <a href="#atividades" className="mt-7 flex items-center justify-end gap-2 text-sm font-bold text-[#246b8d] hover:text-[#1597df]">
+          <a href="/atividades" className="mt-7 flex items-center justify-end gap-2 text-sm font-bold text-[#246b8d] hover:text-[#1597df]">
             Conheça nossas atividades <ArrowRight aria-hidden="true" size={16} strokeWidth={2} />
           </a>
         </div>

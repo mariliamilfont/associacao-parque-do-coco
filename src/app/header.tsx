@@ -4,7 +4,7 @@ import { efeitos, fx } from "./efeitos";
 const navigationLinks = [
 	{ label: "Início", href: "/#inicio" },
 	{ label: "Sobre Nós", href: "/sobre-nos" },
-	{ label: "Atividades", href: "/#atividades" },
+	{ label: "Atividades", href: "/atividades" },
 ];
 
 function ParqueCocoMark() {
