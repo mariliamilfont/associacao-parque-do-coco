@@ -21,7 +21,7 @@ export const efeitos = {
 
 // pra rotacionar, é só colocar mais fotos aqui (idealmente quadradas, 768px ou mais)
 export const fotosHero = [
-  { src: "/hero-educacao.jpg", alt: "Crianças aprendendo e brincando juntas em uma sala de aula" },
+  { src: "/hero-coral.jpg", alt: "Crianças do Espaço Voar se apresentando no palco" },
 ];
 
 export const fx = (ligado: boolean, classe: string) => (ligado ? classe : "");

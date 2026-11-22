@@ -133,10 +133,10 @@ export default function Home() {
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12 lg:px-6 lg:py-16">
           <ParallaxImage className="overflow-hidden rounded-xl">
             <Image
-              src="/mural-arte.jpg"
-              alt="Jovens pintando um mural colorido"
-              width={1152}
-              height={768}
+              src="/inicio-32-anos.jpg"
+              alt="Crianças e educadoras comemorando os 32 anos da Associação"
+              width={1024}
+              height={683}
               className="aspect-[1.5] w-full object-cover"
             />
           </ParallaxImage>

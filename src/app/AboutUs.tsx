@@ -209,10 +209,10 @@ export default function AboutUs() {
 						</div>
 					</div>
 					<Image
-						src="/sobre-nos-turma.jpg"
-						alt="Crianças, educadores e voluntários em uma atividade de aprendizagem"
-						width={332}
-						height={202}
+						src="/sobre-nos-fala.jpg"
+						alt="Representante da Associação discursando no palco durante um evento"
+						width={1132}
+						height={689}
 						priority
 						sizes="(max-width: 767px) 100vw, 50vw"
 						className="h-auto max-h-[22.5rem] w-full rounded-2xl object-cover md:aspect-[1.65] md:h-full"
@@ -380,10 +380,10 @@ export default function AboutUs() {
 						</a>
 					</div>
 					<Image
-						src="/sobre-nos-atividades.jpg"
-						alt="Voluntários e crianças participam juntos de uma atividade educativa"
-						width={310}
-						height={181}
+						src="/sobre-nos-equipe.jpg"
+						alt="Equipe da Associação e voluntárias reunidas na comemoração dos 32 anos"
+						width={992}
+						height={579}
 						sizes="(max-width: 1023px) 100vw, 50vw"
 						className="h-auto max-h-[22.5rem] w-full rounded-2xl object-cover lg:aspect-[1.7] lg:h-full"
 					/>

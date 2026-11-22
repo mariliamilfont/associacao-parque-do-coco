@@ -265,10 +265,10 @@ export default function WannaHelp() {
 						</div>
 						<ParallaxImage className="overflow-hidden rounded-xl">
 							<Image
-								src="/hero-educacao.jpg"
-								alt="Crianças aprendem e participam juntas de atividades na sala da Associação"
-								width={768}
-								height={768}
+								src="/quero-ajudar-arvore.jpg"
+								alt="Criança sorrindo e mostrando o desenho de uma árvore feito para o Dia da Árvore"
+								width={1103}
+								height={668}
 								priority
 								sizes="(max-width: 767px) 100vw, 50vw"
 								className="aspect-[1.65] w-full object-cover"
